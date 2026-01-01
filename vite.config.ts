@@ -5,6 +5,14 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      // Base path for GitHub Pages (change if your repo name is different)
+      base: '/Scholar_AI/',
+
+      // Force build output into `src/dist` so Node deployments that run from `src/` can serve it directly.
+      build: {
+        outDir: 'src/dist'
+      },
+
       server: {
         port: 3000,
         host: '0.0.0.0',
