@@ -1,0 +1,50 @@
+{
+  "name": "idk-what",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node server.js",
+    "start:prod": "cross-env NODE_ENV=production node server.js",
+    "start:server": "node server.js",
+    "dev:server": "nodemon server.js",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:server\" --names \"frontend,backend\" --prefix-colors \"blue,green\"",
+    "test:local": "powershell -ExecutionPolicy Bypass -File ./scripts/test-local.ps1",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test --reporter=list"
+  },
+  "dependencies": {
+    "@google/genai": "latest",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "html2canvas": "1.4.1",
+    "jspdf": "^3.0.4",
+    "lucide-react": "^0.556.0",
+    "mongoose": "^7.4.0",
+    "nodemailer": "^7.0.12",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-markdown": "^10.1.0",
+    "rehype-katex": "7",
+    "remark-gfm": "4",
+    "remark-math": "6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^22.14.0",
+    "@types/supertest": "^6.0.3",
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.1.4",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "vitest": "^4.0.16"
+  }
+}

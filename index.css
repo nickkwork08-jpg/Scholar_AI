@@ -1,0 +1,9 @@
+/* Basic global styles to ensure /index.css exists for dev server */
+html, body, #root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg,#f8fafc,#eef2ff);
+}
