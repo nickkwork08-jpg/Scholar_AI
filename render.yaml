@@ -1,9 +1,9 @@
 services:
   - type: web
     name: scholar-ai
-    env: docker
-    docker:
-      dockerfilePath: Dockerfile
+    env: node
+    buildCommand: "npm ci --include=dev --silent && npm run build"
+    startCommand: "npm start"
     autoDeploy: true
     plan: free
     envVars:
