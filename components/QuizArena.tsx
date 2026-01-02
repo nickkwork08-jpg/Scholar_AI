@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StudyContextType, QuizDifficulty, QuizQuestion } from '../types';
-import { generateQuiz, getMotivationalMessage } from '@/services/geminiService.ts';
+import { generateQuiz, getMotivationalMessage } from '@/services/geminiService';
 import { Play, Loader2, CheckCircle, XCircle, RefreshCcw, Award, ArrowRight, Home, BarChart3, AlertCircle, X } from 'lucide-react';
 
 interface QuizArenaProps {
