@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { StudyContextType, ChatMessage, FileData } from '../types';
-import { getChatResponse } from '@/services/geminiService';
+import { getChatResponse } from '@/services/geminiService.ts';
 import { Send, Bot, User as UserIcon, Loader2, MessageCircle, Paperclip, X, Sparkles, Copy, Check, Terminal, Code } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkMath from 'remark-math';
