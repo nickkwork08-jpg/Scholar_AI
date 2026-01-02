@@ -6,11 +6,9 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
     base: '/Scholar_AI/',
-
     build: {
-      outDir: 'dist', // remove src/dist, just use dist
+      outDir: 'dist', // root-level dist
     },
-
     server: {
       port: 3000,
       host: '0.0.0.0',
@@ -22,7 +20,6 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-
     plugins: [react()],
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
@@ -35,7 +32,8 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'), // root
+        '@': path.resolve(__dirname), // root-level alias
+        '@/services': path.resolve(__dirname, 'services'), // explicitly map services
       },
     },
   };
