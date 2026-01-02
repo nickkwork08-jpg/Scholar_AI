@@ -6,7 +6,6 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    root: process.cwd(),
     base: '/Scholar_AI/',
     build: {
       outDir: 'dist', // build output at root/dist
@@ -35,8 +34,8 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname),                // root alias
-        '@/services': path.resolve(__dirname, 'services'), // services alias
+        '@': path.resolve(__dirname),             // root
+        '@/services': path.resolve(__dirname, 'services'), // root/services
         '@/components': path.resolve(__dirname, 'components'),
       },
     },
