@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StudyContextType } from '../types';
-import { generateFlashcards } from '@/services/geminiService';
+import { generateFlashcards } from '@/services/geminiService.ts';
 import { Loader2, Plus, RefreshCw, CheckCircle2, ChevronLeft, ChevronRight, RotateCw, Sparkles, AlertCircle, X, Download } from 'lucide-react';
 import { jsPDF } from "jspdf";
 
