@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   return {
     base: '/Scholar_AI/',
     build: {
-      outDir: 'dist', // root-level dist
+      outDir: 'dist', // root-level output
     },
     server: {
       port: 3000,
@@ -32,8 +32,8 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname), // root-level alias
-        '@/services': path.resolve(__dirname, 'services'), // explicitly map services
+        '@': path.resolve(__dirname), // root of repo
+        '@/services': path.resolve(__dirname, 'services'), // explicitly map services folder
       },
     },
   };
