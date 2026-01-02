@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { StudyContextType, FileData } from '../types';
 import { Upload, X, FileText, Sparkles, Loader2, Image as ImageIcon, AlertCircle, Download, Plus, Copy, Check, Terminal, Code } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import { generateStudyNotes, generateFlashcards } from '@/services/geminiService.ts';
+import { generateStudyNotes, generateFlashcards } from '@/services/geminiService';
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
