@@ -3,13 +3,13 @@ import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), ''); // use process.cwd() explicitly
+  const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    root: process.cwd(),  // <-- FORCE root to repo root
+    root: process.cwd(),
     base: '/Scholar_AI/',
     build: {
-      outDir: 'dist',    // output at root/dist
+      outDir: 'dist', // build output at root/dist
       emptyOutDir: true,
     },
     server: {
@@ -35,8 +35,9 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname),           // root alias
+        '@': path.resolve(__dirname),                // root alias
         '@/services': path.resolve(__dirname, 'services'), // services alias
+        '@/components': path.resolve(__dirname, 'components'),
       },
     },
   };
