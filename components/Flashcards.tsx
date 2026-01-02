@@ -265,7 +265,7 @@ const Flashcards: React.FC<FlashcardsProps> = ({ context }) => {
                             </span>
                         </div>
                     </div>
-
+                  
                     {/* Back */}
                     <div className="flip-card-back absolute w-full h-full backface-hidden bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-xl rounded-3xl shadow-xl shadow-slate-900/20 p-8 md:p-12 flex flex-col items-center justify-center text-center text-white border border-white/10" style={{ transform: 'rotateY(180deg)' }}>
                         <div className="absolute top-6 left-6 flex items-center gap-2">
