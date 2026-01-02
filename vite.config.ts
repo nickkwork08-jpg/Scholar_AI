@@ -3,16 +3,12 @@ import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '');
-
+  const env = loadEnv(mode, '.', '');
   return {
-    plugins: [react()],
-
-    base: '/',
+    base: '/Scholar_AI/',
 
     build: {
-      outDir: 'dist',
-      emptyOutDir: true
+      outDir: 'dist', // remove src/dist, just use dist
     },
 
     server: {
@@ -22,24 +18,25 @@ export default defineConfig(({ mode }) => {
         '/api': {
           target: 'http://localhost:5000',
           changeOrigin: true,
-          secure: false
-        }
-      }
+          secure: false,
+        },
+      },
     },
 
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, 'src')
-      }
-    },
-
+    plugins: [react()],
     define: {
+      'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.VITE_API_KEY_1': JSON.stringify(env.VITE_API_KEY_1),
       'process.env.VITE_API_KEY_2': JSON.stringify(env.VITE_API_KEY_2),
       'process.env.VITE_API_KEY_3': JSON.stringify(env.VITE_API_KEY_3),
       'process.env.VITE_API_KEY_4': JSON.stringify(env.VITE_API_KEY_4),
-      'process.env.VITE_API_KEY_5': JSON.stringify(env.VITE_API_KEY_5)
-    }
+      'process.env.VITE_API_KEY_5': JSON.stringify(env.VITE_API_KEY_5),
+    },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '.'), // root
+      },
+    },
   };
 });
